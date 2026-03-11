@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIXEL LAB | Inteligência Proprietária</title>
+    <!-- Fontes finas e elegantes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- GSAP for Spatial Transitions -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Header Fixo Top Suspended Menu -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-text">PIXEL LAB</span>
+        </div>
+        <nav class="top-nav">
+            <ul class="nav-links">
+                <li data-target="home" class="active">INÍCIO</li>
+                <li data-target="ads">ANÚNCIOS ANIMADOS</li>
+                <li data-target="model">INFLUENCER IA</li>
+                <li data-target="auto">AUTOMAÇÃO</li>
+                <li data-target="contacts" class="has-dropdown">
+                    CONTATOS
+                    <!-- Acrylic Dropdown Menu -->
+                    <div id="contact-dropdown" class="acrylic-dropdown">
+                        <div class="dropdown-links">
+                            <a href="https://www.instagram.com/pixelab.ia/" target="_blank" class="dropdown-btn">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                            <a href="#" class="dropdown-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                            <a href="mailto:pixelab.contato@gmail.com" class="dropdown-btn">
+                                <i class="far fa-envelope"></i> E-mail
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- O "Mundo" 3D que vai deslizar fisicamente (A Câmera fica parada, o mundo se move) -->
+    <div id="world">
+
+        <!-- ==========================================
+             SALA CENTRAL: INICIO (A Sala Principal com a Imagem 3D) 
+             Coord: (0, 0)
+        =========================================== -->
+        <section class="room" id="room-home">
+            <div class="background-hub">
+                <!-- VIDEO BACKGROUND START -->
+                <video id="vid-loop" class="bg-video active-vid" src="clip-1.mp4" autoplay loop muted
+                    playsinline></video>
+                <video id="vid-side" class="bg-video transition-vid" src="clip-2.mp4" muted playsinline
+                    preload="auto"></video>
+                <!-- Vignette overlay to fade edges into the black void -->
+                <div class="vignette"></div>
+            </div>
+            <div class="content-wrapper text-center">
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             SALA ESQUERDA: ANÚNCIOS (A Câmera vira pra Esquerda)
+             Coord: (-100vw, 0)
+        =========================================== -->
+        <section class="room scrollable-room" id="room-ads">
+            <div class="room-hero text-center">
+                <h2 class="room-title">ANÚNCIOS <span class="text-gradient-cyan">ANIMADOS</span></h2>
+                <p class="lead-phrase mx-auto">Transforme fotos estáticas sem graça em vídeos curtos de 8 segundos
+                    extremamente criativos e impossíveis de ignorar no feed.</p>
+
+                <ul class="hero-benefits">
+                    <li><i class="fas fa-magic text-cyan"></i> De Estático para Dinâmico</li>
+                    <li><i class="fas fa-stopwatch text-cyan"></i> 8 Segundos de Pura Retenção</li>
+                    <li><i class="fas fa-rocket text-cyan"></i> Destaque-se da Concorrência</li>
+                </ul>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-1/video-1.mp4" autoplay loop muted playsinline class="room-video"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Abandone os "Panfletos Digitais"</h3>
+                    <p>Ao invés de postar fotos estáticas que o usuário simplesmente rola para cima, invista em um
+                        anúncio que fisga a audência nos primeiros milissegundos. Movimento gera muito mais vontade de
+                        clicar do que imagens paradas.</p>
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-1/video-2.mp4" autoplay loop muted playsinline class="room-video"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Retenção Máxima no Feed</h3>
+                    <p>A atenção do seu público está cada vez mais escassa. Substitua posts que são ignorados por vídeos
+                        contínuos de 8 segundos extremamente hipnóticos, perfeitamente construídos para prender o olhar
+                        do potencial cliente.</p>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-1/video-3.mp4" autoplay loop muted playsinline class="room-video"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Posicionamento de Alto Valor</h3>
+                    <p>Enquanto a sua concorrência faz anúncios básicos no Canva, você pode se posicionar como uma marca
+                        sofisticada utilizando efeitos visuais complexos que geram desejo instantâneo.</p>
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-1/video-4.mp4" autoplay loop muted playsinline class="room-video"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Desperte o Instinto do Cliente</h3>
+                    <p>Mostre o seu produto de uma forma que dê água na boca antes mesmo do clique! Animações em
+                        alimentos e produtos físicos engatilham o desejo instintivo e diminuem radicalmente o seu custo
+                        por clique.</p>
+                </div>
+            </div>
+
+            <div class="room-footer text-center action-row centered">
+                <button class="cta-btn cyan-glow trigger-contact">SOLICITAR ORÇAMENTO</button>
+                <button class="back-btn" data-target="home">VOLTAR AO HUB</button>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             SALA DIREITA: MODELO IA (A Câmera vira pra Direita)
+             Coord: (100vw, 0)
+        =========================================== -->
+        <section class="room scrollable-room" id="room-model">
+            <div class="room-hero text-center">
+                <h2 class="room-title">INFLUENCER <span class="text-gradient-purple">IA</span></h2>
+                <p class="lead-phrase mx-auto">Sua própria embaixadora digital disponível 24/7 para criar anúncios e
+                    conteúdos incríveis, sem custos de estúdio ou cachês altos.</p>
+
+                <ul class="hero-benefits">
+                    <li><i class="fas fa-user-astronaut text-purple"></i> Influência Exclusiva</li>
+                    <li><i class="fas fa-microphone-alt text-purple"></i> Voz e Áudio Autênticos</li>
+                    <li><i class="fas fa-piggy-bank text-purple"></i> Redução Drástica de Custos</li>
+                </ul>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-2/video-1.mp4" autoplay loop muted playsinline
+                        poster="produto-2/imag.png" class="room-video"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Iane em Ação: VSL</h3>
+                    <p>Apresentação gerada por IA. Nossa Inteligência Artificial sincroniza os
+                        lábios e o rosto com perfeição para máxima conversão no seu site. Não precisa alugar
+                        equipamento caro e muito menos luzes.</p>
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-media">
+                    <img src="produto-2/imag.png" alt="Iane Lookbook 1">
+                </div>
+                <div class="feature-copy">
+                    <h3>Estética Versátil para Redes</h3>
+                    <p>Adapte as roupas, cenário e estilo da sua modelo para conversar diretamente com o seu nicho. Ela
+                        veste a camisa da sua marca e dialoga organicamente com sua audiência através de posts de alta
+                        resolução.</p>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-2/video-2.mp4" autoplay loop muted playsinline
+                        poster="produto-2/imag-.jpeg" class="room-video"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Sempre Disponível para Gravar</h3>
+                    <p>Sua embaixadora virtual nunca atrasa, nunca desmarca, nunca se cansa e pode gravar quantas
+                        variações do seu anúncio você precisar. Esqueça o stress logístico das produções convencionais.
+                        Tudo gerado pelo computador na hora.</p>
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-media">
+                    <img src="produto-2/imag-.jpeg" alt="Iane Lookbook 2">
+                </div>
+                <div class="feature-copy">
+                    <h3>Consistência de Marca Extrema</h3>
+                    <p>Terceirizar conteúdo com múltiplos criadores fragmenta a sua imagem. Com a Iane, você desenvolve
+                        um único rosto perfeitamente otimizado com o qual os seus clientes criarão intimidade diária,
+                        fortalecendo sua marca a longo prazo.</p>
+                </div>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-2/video-3.mp4" autoplay loop muted playsinline class="room-video"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Escala e Agilidade Inigualáveis</h3>
+                    <p>Enquanto seus concorrentes gastam semanas planejando e executando uma única gravação, você pode
+                        gerar
+                        dezenas de conteúdos mensais utilizando a agilidade da Inteligência Artificial, mantendo sempre
+                        o
+                        mais alto padrão estético.</p>
+                </div>
+            </div>
+
+            <div class="room-footer text-center action-row centered">
+                <button class="cta-btn purple-glow trigger-contact">CONHECER A IANE</button>
+                <button class="back-btn" data-target="home">VOLTAR AO HUB</button>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             SALA INFERIOR: AUTOMAÇÃO (A Câmera desce)
+             Coord: (0, 100vh)
+        =========================================== -->
+        <section class="room scrollable-room" id="room-auto">
+            <div class="room-hero text-center">
+                <h2 class="room-title">AUTOMAÇÃO <span class="text-gradient-green">INTELIGENTE</span></h2>
+                <p class="lead-phrase mx-auto">Ecossistemas de alta performance projetados para alavancar a presença
+                    digital da sua empresa estruturando vendas 24h por dia.</p>
+
+                <ul class="hero-benefits">
+                    <li><i class="fas fa-sitemap text-green"></i> Landing Pages de Alta Conversão</li>
+                    <li><i class="fas fa-comment-dots text-green"></i> Atendimento via WhatsApp</li>
+                    <li><i class="fas fa-handshake text-green"></i> Parcerias Oficiais</li>
+                </ul>
+            </div>
+
+            <div class="feature-row">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-3/video-1.mp4" autoplay loop muted playsinline poster="produto-3/fundo.png" class="room-video" style="border-radius:12px;width:100%;height:100%;object-fit:cover;"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Presença Magnética com Landing Pages</h3>
+                    <p>Criação de sites simples e Landing Pages de alto impacto. Em parceria direta com o <b>Google Meu
+                            Negócio</b>, identificamos e comunicamos a necessidade estratégica de atualização da sua
+                        empresa na maior vitrine do mundo corporativo.</p>
+                </div>
+            </div>
+
+            <div class="feature-row reverse">
+                <div class="feature-media" style="position: relative;">
+                    <video src="produto-3/video-2.mp4" autoplay loop muted playsinline poster="produto-3/fundo.png" class="room-video" style="border-radius:12px;width:100%;height:100%;object-fit:cover;"></video>
+                    <div class="audio-indicator"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div class="feature-copy">
+                    <h3>Automação de WhatsApp via Inteligência Artificial</h3>
+                    <p>Em parceria com a poderosa tecnologia da <b>FrontZapp</b>, projetamos fluxos de conversação
+                        inteligentes. A infraestrutura robusta do parceiro garante estabilidade, enquanto nós da PIXEL
+                        realizamos o treinamento minucioso e a manutenção técnica da sua IA, transformando seu WhatsApp
+                        em uma máquina implacável de vendas e suporte.</p>
+                </div>
+            </div>
+
+            <!-- FrontZapp Partnership Banner -->
+            <!-- FrontZapp Partnership Banner -->
+            <div class="partnership-section">
+                <div class="partnership-panel">
+                    <h3 class="panel-title text-center">Tecnologia e <span class="text-gradient-green">Parcerias</span></h3>
+                    <div class="panel-content">
+                        <div class="banner-left">
+                            <img src="produto-3/fundo.png" alt="FrontZapp Partnership" class="frontzapp-img">
+                        </div>
+                        <div class="banner-right partners-grid">
+                            <div class="partner-logo-placeholder">
+                                <img src="parceiros/logo-1.png" alt="Parceiro 1">
+                            </div>
+                            <div class="partner-logo-placeholder">
+                                <img src="parceiros/logo-2.png" alt="Parceiro 2">
+                            </div>
+                            <div class="partner-logo-placeholder">
+                                <img src="parceiros/logo-3.jpg" alt="Parceiro 3">
+                            </div>
+                            <div class="partner-logo-placeholder">
+                                <img src="parceiros/logo-4.jpg" alt="Parceiro 4">
+                            </div>
+                            <div class="partner-logo-placeholder">
+                                <img src="parceiros/logo-5.png" alt="Parceiro 5">
+                            </div>
+                            <div class="partner-logo-placeholder">
+                                <img src="parceiros/logo-6.png" alt="Parceiro 6">
+                            </div>
+                            <div class="partner-logo-placeholder">
+                                <img src="parceiros/logo-7.png" alt="Parceiro 7">
+                            </div>
+                            <div class="partner-logo-placeholder">
+                                <img src="parceiros/logo-8.jpg" alt="Parceiro 8">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="partnership-disclaimer">
+                        <p><i class="fas fa-info-circle"></i> <b>Nota de Transparência:</b> A PIXEL LAB atua como provedora de serviços de arquitetura, estratégia intelectual e execução digital. As tecnologias de infraestrutura e hospedagem utilizadas nos nossos projetos pertencem exclusivamente às empresas parceiras citadas acima.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-footer text-center action-row centered">
+                <button class="cta-btn green-glow trigger-contact">AUTOMATIZAR PROCESSOS</button>
+                <button class="back-btn" data-target="home">VOLTAR AO HUB</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="main.js?v=2"></script>
+</body>
+
+</html>
